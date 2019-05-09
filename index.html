@@ -5,9 +5,10 @@ title: Home
 
 <div class="home">
   <div class="post-list">
-
-    {% for post in site.posts limit:5%}
+    {% assign postCount = 0 %}
+    {% for post in site.posts %}
       {% if post.hide == nil or post.hide == false%}
+      {% if postCount <= 4 %}
       <article class="post_card post">
         <header class="post_header">
           <h2 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h2>
@@ -56,8 +57,10 @@ title: Home
         <hr/>
       </article>
       {% endif %}
+      {% assign postCount=postCount|plus: 1%}
+      {% endif %}
     {% endfor %}
 
-    <div class="pagination older-post"><a href="./archive"><data data-icon="ei-arrow-right"></data> Archive  </a></div>
+    <div class="pagination older-post"><a href="./archive"><data data-icon="ei-arrow-right"></data> 其他文章  </a></div>
   </div>
 </div>
