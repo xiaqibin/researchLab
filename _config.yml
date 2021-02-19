@@ -30,4 +30,4 @@ disqus_shortname:
 # used this for post_excerpt at index_page
 excerpt_separator: <!--more-->
 
-theme: jekyll-theme-cayman
+theme: jekyll-theme-minimal
